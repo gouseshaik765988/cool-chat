@@ -60,9 +60,9 @@ export default function LoginPage() {
                 const data = await res.json();
                 if (data.user) {
                     dispatch(setReduxUser(data.user));
+                    router.push("/home");
                 }
-
-                router.push("/home");
+ 
             }
         } catch (err: unknown) {
             // Type guard to check if err has 'errors' array
@@ -209,4 +209,5 @@ export default function LoginPage() {
             {/* --- END: Login Card --- */}
         </div>
     );
+
 }
